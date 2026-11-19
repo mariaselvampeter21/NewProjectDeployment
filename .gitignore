@@ -1,0 +1,25 @@
+
+# IntelliJ files - EXCLUDE
+.idea/
+*.iml
+
+# Frontend - EXCLUDE generated files
+node_modules/
+dist/
+build/
+
+# Environment files - EXCLUDE secrets
+.env
+.env.*
+!.env.example
+
+# Maven generated files - EXCLUDE
+target/
+*.class
+
+# Logs - EXCLUDE
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db

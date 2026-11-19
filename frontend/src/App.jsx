@@ -1,0 +1,45 @@
+
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import AdminDashboard from "./pages/AdminDashboard";
+import UserDashboard from "./pages/UserDashboard";
+
+import "./styles/Auth.css";
+
+function App() {
+  return (
+    <Routes>
+      {/* Default route */}
+      <Route
+        path="/"
+        element={<Navigate to="/login" replace />}
+      />
+
+      {/* Authentication */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      {/* Role-based dashboards */}
+      <Route
+        path="/admin-dashboard"
+        element={<AdminDashboard />}
+      />
+
+      <Route
+        path="/user-dashboard"
+        element={<UserDashboard />}
+      />
+
+      {/* Unknown routes */}
+      <Route
+        path="*"
+        element={<Navigate to="/login" replace />}
+      />
+    </Routes>
+  );
+}
+
+export default App;
